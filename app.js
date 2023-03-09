@@ -12,7 +12,7 @@ function Employee(EmployeeID,FullName,Department,level,imageURL){
 }
 
 Employee.prototype.salaryCalc = function(){
-if(this.level == "senior"){
+if(this.level == "Senior"){
     this.salary=randomNumber(1500, 2000);
 
 }else if(this.level == "Mid-Senior"){
