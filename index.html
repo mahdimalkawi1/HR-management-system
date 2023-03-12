@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HR-management-system</title>
     <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./index.css">
     <script src="https://kit.fontawesome.com/7a792a400e.js" crossorigin="anonymous"></script>
 
 </head>
@@ -17,6 +18,30 @@
       </div> 
    </header> 
    <main>
+    <div id="cardContainer">
+    </div><br><br>
+    <form id="form">
+        <br>
+        <label for="fullname">Full Name: </label><br>
+        <input type="text" id="fullname" value=""><br>
+        <label for="department">Department: </label><br>
+        <select form="form" id="department"><br>
+        <option value="Administration">Administration</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Development">Development</option>
+        <option value="Finance">Finance</option>
+        </select><br>
+        <label for="level">Level: </label><br>
+        <select form="form" id="level"><br>
+        <option value="Junior">Junior</option>
+        <option value="Mid-Senior">Mid-Senior</option>
+        <option value="Senior">Senior</option>
+        </select><br>
+        <label for="img">Image URL: </label>
+        <input type="select" id="img" value=""><br>
+        <input type="submit" id="submit" value="submit"><br>
+
+    </form>
    </main>
    <footer>
     <p>Created by MahdiMalkawi &copy; 2023</p>
