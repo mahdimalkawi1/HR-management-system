@@ -1,6 +1,10 @@
 'use strict';
 
 const allEmployees=[];
+let form = document.getElementById('form');
+let container = document.getElementById('cardContainer');
+
+
 function Employee(EmployeeID,FullName,Department,level,imageURL){
     this.Employee_ID =EmployeeID;
     this.FullName = FullName;
@@ -27,16 +31,28 @@ if(this.level == "Senior"){
 }
 
 Employee.prototype.render = function(){
-document.write(`<h3>Employee Name = ${this.FullName} & Salary : ${this.salary}</h3>`)
+// document.write(`<h3>Employee Name = ${this.FullName} & Salary : ${this.salary}</h3>`)
+// };
+
+
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <div class="card">
+    <img src="${this.imageURL}" alt="img">
+    <p>NAME: ${this.FullName} - ID: ${this.EmployeeID} Department: ${this.Department} - level: ${this.level} - ${this.salary}</p>
+    </div>`;
+
+    container.appendChild(div);
+
 };
 
-let ghazi = new Employee(1000,"Ghazi Samer","Administration","Senior");
-let lana = new Employee(1001,"Lana Ali","Finance","Senior");
-let tamara = new Employee(1002,"Tamara Ayoub","Marketing","Senior");
-let safi = new  Employee(1003,"Safi Walid","Administration","Mid-Senior");
-let omar = new Employee(1004,"Omar Zaid","Development","Senior");
-let rana = new Employee(1005,"Rana Saleh","Development","Junior");
-let hadi = new Employee(1006,"Hadi Ahmad","Finance","Mid-Senior");
+let ghazi = new Employee(1000,"Ghazi Samer","Administration","Senior","./assets/Ghazi.jpg");
+let lana = new Employee(1001,"Lana Ali","Finance","Senior","./assets/Lana.jpg");
+let tamara = new Employee(1002,"Tamara Ayoub","Marketing","Senior","./assets/Tamara.jpg");
+let safi = new  Employee(1003,"Safi Walid","Administration","Mid-Senior","./assets/Safi.jpg");
+let omar = new Employee(1004,"Omar Zaid","Development","Senior","./assets/Omar.jpg");
+let rana = new Employee(1005,"Rana Saleh","Development","Junior","./assets/Rana.jpg");
+let hadi = new Employee(1006,"Hadi Ahmad","Finance","Mid-Senior","./assets/Hadi.jpg");
 
 methodsCaller (allEmployees);
 
@@ -53,3 +69,29 @@ function methodsCaller (allEmployees){
     }
 
 }
+
+form.addEventListener("submit", eventHandler);
+
+function uniqueID () {
+    return (Math.floor(Math.random() * 1000))
+}
+
+function eventHandler(event){
+    event.preventDefault();
+    let FullName = (event.target.fullname.value);
+    let Department = (document.target.Department.value);
+    let level = (document.target.level.value);
+    let imageURL = (event.target.img.value);
+
+
+console.log(FullName,Department,level,imageURL)
+const div = document.createElement("div");
+div.innerHTML = `
+<div class="card">
+<img src="${imageURL}" alt="img">
+<p>NAME: ${FullName} - Id: ${uniqueID()} - Department: ${Department} - level: ${level} - ${netSalaryForm()}</p>
+</div>`;
+
+container.appendChild(div);
+
+};
