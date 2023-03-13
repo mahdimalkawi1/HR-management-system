@@ -70,28 +70,54 @@ function methodsCaller (allEmployees){
 
 }
 
-form.addEventListener("submit", eventHandler);
+form.addEventListener("submit", submitHandler);
 
 function uniqueID () {
     return (Math.floor(Math.random() * 1000))
 }
 
-function eventHandler(event){
+function submitHandler(event){
     event.preventDefault();
     let FullName = (event.target.fullname.value);
-    let Department = (document.target.Department.value);
-    let level = (document.target.level.value);
+    let Department = (event.target.department.value);
+    let level = (event.target.level.value);
     let imageURL = (event.target.img.value);
 
 
-console.log(FullName,Department,level,imageURL)
+// let newEmployee = new Employee(FullName,Department,level,imageURL);
+// newEmployee.render()
 const div = document.createElement("div");
 div.innerHTML = `
 <div class="card">
 <img src="${imageURL}" alt="img">
-<p>NAME: ${FullName} - Id: ${uniqueID()} - Department: ${Department} - level: ${level} - ${netSalaryForm()}</p>
+<p>NAME: ${FullName} - Id: ${uniqueID()} - Department: ${Department} - level: ${level} - ${netsalay()}</p>
 </div>`;
 
 container.appendChild(div);
 
+function renderAll(){
+    for(let i=0; i<allEmployees.length; i++){
+        allEmployees[i].render();
+    }
+}
+renderAll();
+saveData(allEmployees);
+
 };
+
+function saveData(data){
+    let stringArr = JSON.stringify(data);
+    localStorage.setItem('Employee',stringArr);
+}
+
+function getData(){
+   let retrievedArr = localStorage.getItem('Employee');
+   console.log(retrievedArr);
+   let objArray = JSON.parse(retrievedArr);
+   console.log(objArray)
+   for(let i=0; i<objArray.length; i++){
+    new Employee(objArray[i].Employee_ID, objArray[i].FullName, objArray[i].Department, objArray[i].level, objArray[i].imageURL, objArray[i].netsalay)
+   }
+   renderAll();
+}
+getData()
