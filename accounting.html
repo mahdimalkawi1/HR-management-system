@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accounting</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./accounting.css">
+
 </head>
+
 <body>
-    
+    <header>
+        <div class="navigation">
+            <a class="current" href="./index.html">Home</a>
+            <a href="./accounting.html">Accounting</a>
+            <a href="">ABOUT</a></li>
+        </div>
+    </header>
+    <main>
+        <table id="table">
+            <thead id="thead">
+                <th id="head1"> Department Name </th>
+                <th id="head2"> Number of Employees </th>
+                <th id="head3"> Total Salary </th>
+                <th id="head4"> Average Salary </th>
+            </thead>
+            <tbody id="tbody">
+                <tr id="r1">
+                    <td> Administration</td>
+                    <td id="adNo"></td>
+                    <td id="adTS"></td>
+                    <td id="adAvS"></td>
+                </tr>
+
+                <tr id="r2">
+                    <td> Marketing</td>
+                    <td id="marNo"></td>
+                    <td id="marTS"></td>
+                    <td id="marAvS"></td>
+                </tr>
+                <tr id="r3">
+                    <td> Development</td>
+                    <td id="devNo"></td>
+                    <td id="devTS"></td>
+                    <td id="devAvS"></td>
+                </tr>
+                <tr id="r4">
+                    <td> Finance</td>
+                    <td id="finNo"></td>
+                    <td id="finTS"></td>
+                    <td id="finAvS"></td>
+                </tr>
+                <tr id="r5">
+                    <td> Total</td>
+                    <td id="totalNo"></td>
+                    <td id="totalSal"></td>
+                    <td id="totalAvS"></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </main>
+    <footer>
+        <p>Created by MahdiMalkawi &copy; 2023</p>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-solid fa-phone"></i>
+    </footer>
+    <script src="./accounting.js"></script>
 </body>
+
 </html>
