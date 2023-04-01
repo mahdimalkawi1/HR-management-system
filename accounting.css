@@ -1,0 +1,51 @@
+a {
+    color: #ffffff;
+    font-family: 'Righteous', cursive;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #dceef1c3;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
+    
+  }
+  
+  
+  thead {
+    background-color: #f7f7f7;
+  }
+  
+  thead th {
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }
+  
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tbody td {
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
